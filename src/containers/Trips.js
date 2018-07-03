@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
+import Trip from './Trip';
 import { inject, observer } from 'mobx-react';
+import { Link } from "react-router-dom";
 
 @inject('TripStore')
 @observer
@@ -24,9 +26,10 @@ class Trips extends Component {
           <button>Add trip</button>
         </form>
         <h2>You have {TripStore.tripCount} trips</h2>
-        <ul>{TripStore.trips.map((trip,i) => <li key={i}>{trip}</li>)}</ul>
+        <ul>{TripStore.trips.map((trip,i) => <li key={i}><Link to={{ pathname: `/trip/${trip}`}}>{trip}</Link></li>)}</ul>
       </div>
     )
+
   }
 }
 

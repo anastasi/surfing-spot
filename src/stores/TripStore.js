@@ -7,7 +7,9 @@ class TripStore {
   addTrip = trip => {
     this.trips.push(trip);
   };
-
+  getTrip(id){
+    return this.trips.find( trip => trip === id );
+  }
   @computed
   get tripCount() {
     return this.trips.length;

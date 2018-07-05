@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
+import TripList from '../components/TripList';
 import { inject, observer } from 'mobx-react';
-import { Link } from "react-router-dom";
 
 const getBase64 = (file) => {
   return new Promise((resolve,reject) => {
@@ -13,11 +13,10 @@ const getBase64 = (file) => {
 
 @inject('TripStore')
 @observer
-class Trips extends Component {
+class TripForm extends Component {
   state = {
     selectedFile: null
   }
-
   handleSubmit = e => {
     e.preventDefault();
     this.props.TripStore.addTrip({
@@ -37,7 +36,6 @@ class Trips extends Component {
   } 
 
   render() {
-    const { TripStore } = this.props;
     return (
       <div>
         <form onSubmit={e => this.handleSubmit(e)}>
@@ -51,19 +49,13 @@ class Trips extends Component {
             onChange={this.fileChangedHandler}
             ref={input => (this.img = input)}
           />
-
           <button>Add trip</button>
-          
         </form>
-
-        <h2>You have {TripStore.tripCount} trips</h2>
-        <ul>{TripStore.trips.map((trip,i) => <li key={i}>
-          <Link to={{ pathname: `/trip/${trip.name}`}}>{trip.name}
-            <img src={trip.img}/>
-          </Link></li>)}</ul>
+        {/* <h2>You have {TripStore.tripCount} trips</h2> */}
+        <TripList/>
       </div>
     )
   }
 }
 
-export default Trips;
+export default TripForm;

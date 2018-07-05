@@ -9,8 +9,9 @@ class Trip extends Component {
     const trip = this.props.TripStore.getTrip(tripId);
     return(
       <div>
-      <h3>{trip}</h3>
-    </div>
+        <h3>{trip.name}</h3>
+        <img src={trip.img} />
+      </div>
     )
   }
  

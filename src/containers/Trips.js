@@ -27,7 +27,6 @@ class Trips extends Component {
     e.target.reset();
   }
   fileChangedHandler = e => {
-    
     const file = e.target.files[0];
     getBase64(file).then(base64 => {
       this.setState({
@@ -39,7 +38,6 @@ class Trips extends Component {
 
   render() {
     const { TripStore } = this.props;
-    console.log(TripStore);
     return (
       <div>
         <form onSubmit={e => this.handleSubmit(e)}>

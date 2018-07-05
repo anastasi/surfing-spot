@@ -5,6 +5,8 @@ import App from './App';
 import { Provider } from 'mobx-react';
 import TripStore from './stores/TripStore';
 import registerServiceWorker from './registerServiceWorker';
+import 'materialize-css';
+import 'materialize-css/dist/css/materialize.min.css';
 
 const Root = (
   <Provider TripStore={TripStore}>

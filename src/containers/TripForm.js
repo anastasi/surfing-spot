@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import TripList from '../components/TripList';
+import TripList from '../containers/TripList';
+import { Row, Button } from 'react-materialize';
 import { inject, observer } from 'mobx-react';
 
 const getBase64 = (file) => {
@@ -37,7 +38,7 @@ class TripForm extends Component {
 
   render() {
     return (
-      <div>
+      <Row>
         <form onSubmit={e => this.handleSubmit(e)}>
           <input
             type="text"
@@ -49,11 +50,10 @@ class TripForm extends Component {
             onChange={this.fileChangedHandler}
             ref={input => (this.img = input)}
           />
-          <button>Add trip</button>
+          <Button waves='light'>Add trip</Button>
         </form>
-        {/* <h2>You have {TripStore.tripCount} trips</h2> */}
-        <TripList/>
-      </div>
+          <TripList/>
+        </Row>
     )
   }
 }

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import TripList from '../containers/TripList';
+import TripList from './TripList';
+import './TripForm.scss';
 import { Row, Button } from 'react-materialize';
 import { inject, observer } from 'mobx-react';
 
@@ -39,7 +40,7 @@ class TripForm extends Component {
   render() {
     return (
       <Row>
-        <form onSubmit={e => this.handleSubmit(e)}>
+        <form onSubmit={e => this.handleSubmit(e)} className="TripForm">
           <input
             type="text"
             ref={input => (this.trip = input)}

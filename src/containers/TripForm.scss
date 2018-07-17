@@ -1,6 +1,44 @@
 .TripForm{
-  background-color: green !important;
-  input{
-    margin: 30px 150px;
+  padding: 20px 12px 10px 20px;
+  font-style: "Arial, Helvetica", sans-serif;
+  .TripFormTitle{
+    font-size: 24px;
+    color: #4c4c54;
   }
+  input[type=text]{
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    border:1px solid #BEBEBE;
+    padding: 7px;
+    margin:0px;
+    -webkit-transition: all 0.30s ease-in-out;
+    -moz-transition: all 0.30s ease-in-out;
+    -ms-transition: all 0.30s ease-in-out;
+    -o-transition: all 0.30s ease-in-out;
+    outline: none;  
+    height: auto;
+  }
+  input[type=text]:focus{
+    -moz-box-shadow: 0 0 8px #88D5E9;
+    -webkit-box-shadow: 0 0 8px #88D5E9;
+    box-shadow: 0 0 8px #88D5E9;
+  }
+  .FileContainer{
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    border:1px solid #BEBEBE;
+    padding: 7px;
+    margin:0px;
+    -webkit-transition: all 0.30s ease-in-out;
+    -moz-transition: all 0.30s ease-in-out;
+    -ms-transition: all 0.30s ease-in-out;
+    -o-transition: all 0.30s ease-in-out;
+    outline: none; 
+    input[type=file] {
+      display: none;
+    }
+  }
+  
 }

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import TripList from './TripList';
 import './TripForm.scss';
-import { Row, Button } from 'react-materialize';
+import { Row, Col, Button } from 'react-materialize';
 import { inject, observer } from 'mobx-react';
 
 const getBase64 = (file) => {
@@ -39,22 +39,34 @@ class TripForm extends Component {
 
   render() {
     return (
-      <Row>
-        <form onSubmit={e => this.handleSubmit(e)} className="TripForm">
-          <input
-            type="text"
-            ref={input => (this.trip = input)}
-            placeholder="Add a trip"
-          />
-          <input 
-            type="file" 
-            onChange={this.fileChangedHandler}
-            ref={input => (this.img = input)}
-          />
-          <Button waves='light'>Add trip</Button>
-        </form>
-          <TripList/>
+      <Row className="TripForm">
+        <h1 className="TripFormTitle">Add your new Trip!</h1>
+        <Row>
+          <form onSubmit={e => this.handleSubmit(e)}>
+            <Col l={6}>
+              <input
+                type="text"
+                ref={input => (this.trip = input)}
+                placeholder="Add a trip"
+              />
+            </Col>
+            <Col l={6}>
+              <label className="FileContainer">
+                Choose a trip image
+                <input 
+                  type="file" 
+                  onChange={this.fileChangedHandler}
+                  ref={input => (this.img = input)}
+                />
+              </label>
+            </Col>
+            <Col l={12}>
+              <Button waves='light'>Add trip</Button>
+            </Col>
+          </form>
         </Row>
+        <TripList/>
+      </Row>
     )
   }
 }

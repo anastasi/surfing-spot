@@ -2,4 +2,7 @@
   img{
     overflow: hidden;
   }
+  .card.small .card-image, .card.medium .card-image, .card.large .card-image{
+    max-height: 75%;
+  }
 }

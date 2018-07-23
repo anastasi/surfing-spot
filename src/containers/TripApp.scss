@@ -1,0 +1,61 @@
+.TripApp{
+  font-style: "Arial, Helvetica", sans-serif;
+  .TripFormTitle{
+    font-size: 24px;
+    color: #4c4c54;
+  }
+  .TripForm{
+    .TripFormBg{
+      margin: 10px auto;
+      padding: 30px;
+      background: #F7F7F7;
+      input[type="text"],
+      textarea{
+        -webkit-transition: all 0.30s ease-in-out;
+        -moz-transition: all 0.30s ease-in-out;
+        -ms-transition: all 0.30s ease-in-out;
+        -o-transition: all 0.30s ease-in-out;
+        outline: none;
+        box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        width: 100%;
+        background: #fff;
+        margin-bottom: 4%;
+        border: 1px solid #ccc;
+        color: #555;
+        font: 95% Arial, Helvetica, sans-serif;
+      }
+      input[type="text"]{
+        padding: 3%;
+      }
+      textarea{
+        padding: 3% 3% 30%;
+      }
+      input[type="text"]:focus,
+      textarea:focus{
+        box-shadow: 0 0 5px #43D1AF;
+        border: 1px solid #43D1AF;
+      }
+      .FileContainer{
+        box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        border:1px solid #BEBEBE;
+        padding: 7px;
+        margin:0px;
+        -webkit-transition: all 0.30s ease-in-out;
+        -moz-transition: all 0.30s ease-in-out;
+        -ms-transition: all 0.30s ease-in-out;
+        -o-transition: all 0.30s ease-in-out;
+        outline: none; 
+        input[type=file] {
+          display: none;
+        }
+      }
+      .TripAddBtn{
+        margin-top: 6%;
+      }
+    }
+  }
+}

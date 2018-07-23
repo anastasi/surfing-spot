@@ -14,14 +14,13 @@ class TripList extends Component {
           {TripStore.trips.reverse().map((trip,i) => 
             <Col l={6} key={i}>
               <Link to={{ pathname: `/trip/${trip.name}`}}>
-                <Card className="medium" header={<CardTitle image={trip.img} waves='light'/>}
+                <Card className="small" header={<CardTitle image={trip.img} waves='light'/>}
                   title={trip.name}
                   >
                 </Card>
               </Link>
             </Col>)}
       </Row>
-
     );
   }
 }

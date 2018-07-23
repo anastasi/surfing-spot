@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import TripForm from './containers/TripForm';
+import TripApp from './containers/TripApp';
 import Trip from './containers/Trip';
 import { BrowserRouter as Router, Route } from "react-router-dom";
 
@@ -9,7 +9,7 @@ class App extends Component {
     return (
       <Router>
         <div className="App">
-          <Route exact path="/" component={TripForm} />
+          <Route exact path="/" component={TripApp} />
           <Route path="/trip/:id" component={Trip} />
         </div>
       </Router>

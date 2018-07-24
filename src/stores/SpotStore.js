@@ -1,7 +1,7 @@
 import { observable, action, computed } from 'mobx';
 
-class TripStore {
-  @observable trips = [
+class SpotStore {
+  @observable spots = [
     {
       name: 'Lissbon1',
       img: '/images/1.jpg',
@@ -25,17 +25,17 @@ class TripStore {
   ];
 
   @action
-  addTrip = trip => {
-    this.trips.push(trip);
+  addSpot = spot => {
+    this.spots.push(spot);
   };
-  getTrip(id){
-    return this.trips.find( trip => trip.name === id );
+  getSpot(id){
+    return this.spots.find( spot => spot.name === id );
   }
   @computed
-  get tripCount() {
-    return this.trips.length;
+  get spotCount() {
+    return this.spots.length;
   }
 }
 
-const store = new TripStore();
+const store = new SpotStore();
 export default store;

@@ -1,25 +1,25 @@
 import React, { Component } from 'react';
 import { inject, observer } from 'mobx-react';
 import { Row, Col } from 'react-materialize';
-import './Trip.scss';
+import './Spot.scss';
 import BackButton from "./BackButton";
 
-@inject ('TripStore')
+@inject ('SpotStore')
 @observer
-class Trip extends Component {
+class Spot extends Component {
   render(){
-    const tripId = this.props.match.params.id;
-    const trip = this.props.TripStore.getTrip(tripId);
+    const spotId = this.props.match.params.id;
+    const spot = this.props.SpotStore.getSpot(spotId);
     return(
-      <Row className="Trip">
+      <Row className="Spot">
         <Col l={3}>
           <BackButton/>
         </Col>
         <Col l={10} offset='l1'>
             
-          <h3>{trip.name}</h3>
-          <img src={trip.img} />
-          <p>{trip.desc}</p>
+          <h3>{spot.name}</h3>
+          <img src={spot.img} />
+          <p>{spot.desc}</p>
         </Col>
       </Row>
     )
@@ -27,4 +27,4 @@ class Trip extends Component {
  
 }
 
-export default Trip;
+export default Spot;

@@ -1,11 +1,11 @@
-.TripApp{
+.SpotApp{
   font-style: "Arial, Helvetica", sans-serif;
-  .TripFormTitle{
+  .SpotFormTitle{
     font-size: 24px;
     color: #4c4c54;
   }
-  .TripForm{
-    .TripFormBg{
+  .SpotForm{
+    .SpotFormBg{
       margin: 10px auto;
       padding: 30px;
       background: #F7F7F7;
@@ -53,7 +53,7 @@
           display: none;
         }
       }
-      .TripAddBtn{
+      .SpotAddBtn{
         margin-top: 6%;
       }
     }

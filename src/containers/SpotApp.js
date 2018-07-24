@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import TripList from './TripList';
-import './TripApp.scss';
+import SpotList from './SpotList';
+import './SpotApp.scss';
 import { Row, Col, Button } from 'react-materialize';
 import { inject, observer } from 'mobx-react';
 
@@ -14,9 +14,9 @@ const getBase64 = (file) => {
   });
 }
 
-@inject('TripStore')
+@inject('SpotStore')
 @observer
-class TripApp extends Component {
+class SpotApp extends Component {
   state = {
     selectedFile: null,
     formVisible: false
@@ -24,9 +24,9 @@ class TripApp extends Component {
 
   handleSubmit = e => {
     e.preventDefault();
-    if(this.trip.value && this.state.selectedFile){
-      this.props.TripStore.addTrip({
-        name: this.trip.value,
+    if(this.spot.value && this.state.selectedFile){
+      this.props.SpotStore.addSpot({
+        name: this.spot.value,
         img: this.state.selectedFile,
         desc: this.state.value
       });
@@ -45,6 +45,7 @@ class TripApp extends Component {
       console.debug("file stored",base64);
     });
   }
+
   formVisibleHandler = e => {
     this.setState({
       formVisible: !this.state.formVisible
@@ -53,15 +54,14 @@ class TripApp extends Component {
 
   render() {
     let output = null;
-    
     if(this.state.formVisible){
       output = (
         <form onSubmit={e => this.handleSubmit(e)}>
           <Col l={12} m={12} s={12}>
             <input
               type="text"
-              ref={input => (this.trip = input)}
-              placeholder="Add a trip"
+              ref={input => (this.spot = input)}
+              placeholder="Add a spot"
             />
           </Col>
           <Col l={12} m={12} s={12}>
@@ -72,7 +72,7 @@ class TripApp extends Component {
           </Col>
           <Col l={12} m={12} s={12}>
             <label className="FileContainer">
-              Choose a trip image
+              Choose a spot image
               <input 
                 type="file" 
                 onChange={this.fileChangedHandler}
@@ -81,28 +81,28 @@ class TripApp extends Component {
             </label>
           </Col>
           <Col l={12} m={12} s={12}>
-            <Button waves='light' className="TripAddBtn">Add trip</Button>
+            <Button waves='light' className="SpotAddBtn">Add spot</Button>
           </Col>
         </form>
       );
     }
     return (
-      <div className="TripApp">
+      <div className="SpotApp">
         <Row>
-            <h1 className="TripFormTitle">Add your new Trip!</h1>
+            <h1 className="SpotFormTitle">Add your new Spot!</h1>
             <Button onClick={this.formVisibleHandler} floating large className='red' waves='light' icon='add' />
         </Row>
-        <Row className="TripForm">
-          <Col l={4} offset="l4" className="TripFormBg">
+        <Row className="SpotForm">
+          <Col l={4} offset="l4" className="SpotFormBg">
             {output}
           </Col>
         </Row>
         <Row>
-          <TripList/>
+          <SpotList/>
         </Row>
       </div>
     )
   }
 }
 
-export default TripApp;
+export default SpotApp;

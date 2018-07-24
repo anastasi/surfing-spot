@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
-import TripApp from './containers/TripApp';
-import Trip from './containers/Trip';
+import SpotApp from './containers/SpotApp';
+import Spot from './containers/Spot';
 import { BrowserRouter as Router, Route } from "react-router-dom";
 
 class App extends Component {
@@ -9,8 +9,8 @@ class App extends Component {
     return (
       <Router>
         <div className="App">
-          <Route exact path="/" component={TripApp} />
-          <Route path="/trip/:id" component={Trip} />
+          <Route exact path="/" component={SpotApp} />
+          <Route path="/spot/:id" component={Spot} />
         </div>
       </Router>
     );

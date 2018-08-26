@@ -23,7 +23,6 @@ class Form extends Component {
   
   handleSubmit = (e) => {
     e.preventDefault();
-    console.log('gggf', this.spot.value);
     if(this.spot.value && this.state.selectedFile){
       this.props.SpotStore.addSpot({
         name: this.spot.value,
@@ -41,7 +40,6 @@ class Form extends Component {
       this.setState({
         selectedFile: base64
       })
-      console.debug("file stored",base64);
     });
   }
   

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { inject, observer } from 'mobx-react';
 import { Row, Col } from 'react-materialize';
 import './Spot.scss';
-import BackButton from "./BackButton";
+import BackButton from "../components/BackButton";
 
 @inject ('SpotStore')
 @observer

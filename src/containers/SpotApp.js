@@ -30,11 +30,7 @@ class SpotApp extends Component {
             <h1 className="SpotFormTitle">Add your new Spot!</h1>
             <Button onClick={this.formVisibleHandler} floating large className='red' waves='light' icon='add' />
         </Row>
-        <Row className="SpotForm">
-          <Col l={4} offset="l4" className="SpotFormBg">
             {output}
-          </Col>
-        </Row>
         <Row>
           <SpotList/>
         </Row>

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import '../containers/SpotApp.scss';
-import { Col, Button } from 'react-materialize';
+import { Row, Col, Button } from 'react-materialize';
 import { inject, observer } from 'mobx-react';
 
 
@@ -45,34 +45,38 @@ class Form extends Component {
   
   render(){
     return(
-        <form onSubmit={e => this.handleSubmit(e)}>
-          <Col l={12} m={12} s={12}>
-            <input
-              type="text"
-              ref={input => (this.spot = input)}
-              placeholder="Add a spot"
-            />
-          </Col>
-          <Col l={12} m={12} s={12}>
-            <textarea
-              ref={input => (this.desc = input)}
-              placeholder="Add a description"
-            ></textarea>
-          </Col>
-          <Col l={12} m={12} s={12}>
-            <label className="FileContainer">
-              Choose a spot image
-              <input 
-                type="file" 
-                onChange={this.fileChangedHandler}
-                ref={input => (this.img = input)}
+      <Row className="SpotForm">
+        <Col l={4} offset="l4" className="SpotFormBg">
+          <form onSubmit={e => this.handleSubmit(e)}>
+            <Col l={12} m={12} s={12}>
+              <input
+                type="text"
+                ref={input => (this.spot = input)}
+                placeholder="Add a spot"
               />
-            </label>
-          </Col>
-          <Col l={12} m={12} s={12}>
-            <Button waves='light' className="SpotAddBtn">Add spot</Button>
-          </Col>
-        </form>
+            </Col>
+            <Col l={12} m={12} s={12}>
+              <textarea
+                ref={input => (this.desc = input)}
+                placeholder="Add a description"
+              ></textarea>
+            </Col>
+            <Col l={12} m={12} s={12}>
+              <label className="FileContainer">
+                Choose a spot image
+                <input 
+                  type="file" 
+                  onChange={this.fileChangedHandler}
+                  ref={input => (this.img = input)}
+                />
+              </label>
+            </Col>
+            <Col l={12} m={12} s={12}>
+              <Button waves='light' className="SpotAddBtn">Add spot</Button>
+            </Col>
+          </form>
+        </Col>
+      </Row>
     );
   };
 } 

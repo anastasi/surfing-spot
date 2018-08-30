@@ -17,6 +17,9 @@ class SpotList extends Component {
                 <Card className="small" header={<CardTitle image={spot.img} waves='light'/>}
                   title={spot.name}
                   >
+                  <div className="SpotLevelBg">
+                    <p className="SpotListLevel">{spot.level}</p>
+                  </div>
                 </Card>
               </Link>
             </Col>)}

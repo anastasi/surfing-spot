@@ -20,6 +20,8 @@ class Spot extends Component {
           <h3>{spot.name}</h3>
           <img src={spot.img} />
           <p>{spot.desc}</p>
+          <p className="SpotLevel">{spot.level}</p>
+
         </Col>
       </Row>
     )

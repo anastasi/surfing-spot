@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import SpotList from '../components/SpotList';
 import SpotForm from '../components/SpotForm';
 import './SpotApp.scss';
-import { Row, Col, Button } from 'react-materialize';
+import { Row, Button } from 'react-materialize';
 import { inject, observer } from 'mobx-react';
 
 

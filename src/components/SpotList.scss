@@ -5,4 +5,16 @@
   .card.small .card-image, .card.medium .card-image, .card.large .card-image{
     max-height: 75%;
   }
+  .small.card{
+    position: relative;
+    .SpotLevelBg{
+      position: absolute;
+      top: 0px;
+      right: 0px;
+      padding: 7px 10px;
+      color: #f7ebeb;
+      z-index: 99999;
+      background-color: rgba(0, 0, 0, 0.3);
+    }
+  }
 }

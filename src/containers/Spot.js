@@ -12,17 +12,19 @@ class Spot extends Component {
     const spot = this.props.SpotStore.getSpot(spotId);
     return(
       <Row className="Spot">
-        <Col l={3}>
-          <BackButton/>
-        </Col>
-        <Col l={10} offset='l1'>
-            
-          <h3>{spot.name}</h3>
-          <img src={spot.img} />
-          <p>{spot.desc}</p>
-          <p className="SpotLevel">{spot.level}</p>
-
-        </Col>
+        <div className="container">
+          <Col l={12}>
+            <BackButton/>
+          </Col>
+          <Col l={6}>
+            <img src={spot.img} />
+          </Col>
+          <Col l={6}>
+            <h3>{spot.name}</h3>
+            <p className="SpotLevel">{spot.level}</p>
+            <p>{spot.desc}</p>
+          </Col>
+        </div>
       </Row>
     )
   }
